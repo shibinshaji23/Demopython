@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block title %}
-  cart-JB PVT LTD
+  cart-Urbanfreex PVT LTD
 {% endblock %}
 {% block content %}
 {% if not cart_items  %}
@@ -43,7 +43,7 @@
             {% for cart_item in cart_items %}
             <tr>
                 <td>
-                    <a href="cart_item.product.get_absolute_url"><img src="{{cart_item.product.image.url}}"alt="" style="width:100px;height:100" class="float-left rounded custom_image"> </a>
+                    <a href="cart_item.product.get_absolute_url"><img src="{{cart_item.product.image.url}}"alt="" style="width:100px;height:100px;" class="float-left rounded custom_image"> </a>
                 </td>
                 <td class="text-left">
                     {{cart_item.product.name}}
@@ -61,7 +61,7 @@
                 <td>
                     <a href="{% url 'cart:add_cart' cart_item.product.id %}" class="custom_a"><i class="fa-solid fa-plus custom_icon"></i></a>
                     <a href="{% url 'cart:cart_remove' cart_item.product.id %}" class="custom_a"><i class="fa-solid fa-minus custom_icon"></i></a>
-                    &nbsp;<a href="{% url 'cart:full_remove' cart_item.product.id %}" class="custom_icon"><i class="fa-solid fa-trash custom_icon"></i></a>
+                    <a href="{% url 'cart:full_remove' cart_item.product.id %}" class="custom_icon"><i class="fa-solid fa-trash custom_icon"></i></a>
                 </td>
                 {% else %}
                   <td>
@@ -99,6 +99,7 @@
         </table>
         <div class="mx_auto">
             <a href="{% url 'shop:allProdCat' %}" class="btn btn-secondary btn-block my_custom_button">continue shopping</a>
+            <a href="{% url 'shop:allProdCat' %}" class="btn btn-secondary btn-block my_custom_button">payment</a>
 
         </div>
              <br>
