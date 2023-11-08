@@ -2,74 +2,73 @@
 {% load static %}
 {% block metadescription %}
     {% if category %}
-        {{ category.description|truncatewords:155 }}
-    {% else %}
-        welcome JB store where you can by different items....
-   {% endif %}
+   {{ category.description|truncatewords:155 }}
+ {% else %}
+    welcome to urban vogue store where you can buy anything...
+ {% endif %}
 {% endblock %}
 {% block title %}
-    {% if category %}
-        {{ category.name}} - JB store
-    {% else %}
-      See our New collections -JB store
-    {% endif %}
+  {% if category %}
+    {{category.name}} -UrbanVogue
+  {% else %}
+    see our new collections-UrbanVogue store
+  {% endif %}
 {% endblock %}
 
 {% block content %}
-{% if category %}
- <div>
-     <div class="row my_row_class" >
-         <div class="mx-auto">
-         <p><a href="{% url 'shop:allProdCat' %}">our product collections</a> </p>
-     </div>
-         </div>
- </div>
-{% endif %}
-<div class="mx_auto">
+ {% if category %}
+  <div>
+      <div class="row my_row_class">
+          <div class="mx-auto">
+          <p><a href="{% url 'shop:allProdCat' %}">Our product collectons</a> </p>
+      </div>
+      </div>
+  </div>
+  {% endif %}
+<div class="mx-auto">
     {% if category %}
-    <img class="my_image" src="{{category.image.url}}" alt="{{category.name}}">
+        <img class="my_image" src="{{category.image.url}}" alt="{{category.name}}">
 </div>
 <br>
 <div>
-    <h1 class="text-center my_title">{{category.name}}</h1>
-    <p class="text-justify">{{category.description}}</p>
+      <h1 class="text-center my_title">{{category.name}}</h1>
+      <p class="text-justify">{{category.description}}</p>
 </div>
-   {% else %}
+    {% else %}
 <div>
-    <img class="my_image my_image_padding" src="{% static 'img/banner.png' %}" alt="our products" width="1350px;">
+    <img class="my_image my_image_padding" src="{% static 'img/banner-1.png' %}" alt="our products" width="1115px;" height="auto;">
 </div>
 <br>
 <div>
-    <h1 class="text-center my_title">Our products Collections</h1>
-    <p class="text_justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <h1 class="text-center my_title">our products collections</h1>
+    <p class="text-justify">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+
 </div>
-   {% endif %}
+ {% endif %}
 <div class="container">
     <div class="row mx_auto">
         {% for product in products.object_list %}
-        <div class="my_bottom_margin col-9 col-sm-12 col-md-12 col-lg-4 text-center">
+        <div class="my_bottom_margin col-9  col-sm-12 col-md-4 col-lg-4">
             <div class="card text-center" style="min-width:18rem;">
-                <a href="{{product.get_url}}"><img class="card-img-top my_image" src="{{product.image.url}}"alt="{{product.name}}"></a>
-                <div class="card-body">
-                    <h4>{{product.name}}</h4>
-                    <p>{{product.price}}</p>
-                </div>
+            <a href="{{product.get_url}}"><img class="card-img-top my_image" src="{{product.image.url}}" alt="{{product.name}}"></a>
+            <div class="card-body">
+                <h4>{{product.name}}</h4>
+                <p>{{product.price}}</p>
+            </div>
             </div>
         </div>
         {% endfor %}
     </div>
-    <div class="mx-auto">
-        {% if products.paginator.num_pages > 1 %}
-
-        <hr>
-        <div class="text-center">
-            {% for pg in products.paginator.page_range %}
-               <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %} active {% endif %}">{{pg}}</a>
-            {% endfor %}
-
-        </div>
-        {% endif %}
+<div class="mx_auto">
+    {% if products.paginator.num_pages > 1 %}
+    <hr>
+    <div class="text-center">
+        {% for pg in products.paginator.page_range %}
+        <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %} active {% endif %}">{{pg}}</a>
+        {% endfor %}
     </div>
-    <br>
+    {% endif %}
+</div>
+<br>
 </div>
 {% endblock %}
