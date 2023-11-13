@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:aqua;
+}
+
+.container {
+    width: 300px;
+    padding: 16px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.container h2 {
+    text-align: center;
+    color: teal;
+}
+
+.input-field {
+    margin: 10px 0;
+}
+
+.input-field label {
+    display: block;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 6px 12px;
+    margin: 4px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    text-align: center;
+}
+
+.submit-btn input {
+    background-color: teal;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.submit-btn input:hover {
+    background-color: #007991;
+}
+</style>
+
+</head>
+<body>
+
+<!--        <form action="{% url 'login' %}" method="POST" class="p-3 shadow" style="text-align:center">-->
+<!--                {% csrf_token %}-->
+<!--            <br>-->
+<!--            <div>-->
+<!--                <h1> Login Form </h1>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <label><b>Username :</b> </label>-->
+<!--                <br>-->
+<!--                <input type="text" placeholder="Enter Username" name="username" required><br>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <label><b>Password :</b> </label>-->
+<!--                <br>-->
+<!--                <input type="password" placeholder="Enter Password" name="password" required>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <button type="submit"> <a href="{% url 'register' %}"></a> Submit </button>-->
+<!--            </div>-->
+<!--            <p class="text-center">-->
+<!--                Please click on the<a href="{% url 'register' %}">Register Link</a>-->
+<!--            </p>-->
+<!--        </form>-->
+
+
+
+<div class="container">
+    <h2>Login</h2>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="input-field">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-field">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="submit-btn">
+                <button type="submit"> <a href="#"></a> Submit </button>
+            </div>
+    </form>
+    <p>Don't have an account? <a href="{% url 'register' %}">Click here!</a></p>
+</div>
+</body>
+</html>
