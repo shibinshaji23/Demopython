@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Page</title>
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:aqua;
+}
+
+.container {
+    width: 300px;
+    padding: 16px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.container h1 {
+    text-align: center;
+    color: teal;
+}
+
+.input-field {
+    margin: 10px 0;
+}
+
+.input-field label {
+    display: block;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 6px 12px;
+    margin: 4px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    text-align: center;
+}
+
+.submit-btn input {
+    background-color: teal;
+    color:blue;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.submit-btn input:hover {
+    background-color: #007991;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1> Registration</h1>
+
+<form action="{% url 'register' %}" method="POST">
+    {% csrf_token %}
+    <div class="input-field">
+          <label>Username:</label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+            <label>Password:</label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <label>Confirm Password:</label>
+            <input type="password" placeholder="Enter Confirm Password" name="confirmpassword" required>
+        </div>
+    <br>
+            <div class="submit-btn">
+                <button type="submit"> <a href="#"></a> Submit </button>
+            </div>
+</form>
+</div>
+</body>
+</html>
