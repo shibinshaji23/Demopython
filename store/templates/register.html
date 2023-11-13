@@ -4,79 +4,63 @@
     <meta charset="UTF-8">
     <title>New Page</title>
 <style>
-
-body {
-    font-family: Arial, sans-serif;
-    background-color:aqua;
+Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: aqua;
 }
 
+button {
+       background-color: #4CAF50;
+       width: 10%;
+        color: blue;
+        padding: 10px;
+        margin: 10px 0px;
+        border: none;
+        cursor: pointer;
+         }
+ form {
+        border: none;
+    }
+input[type=text], input[type=password] {
+        width: 25%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 2px solid green;
+        box-sizing: border-box;
+    }
+button:hover {
+        opacity: 0.7;
+    }
 .container {
-    width: 300px;
-    padding: 16px;
-    background-color: white;
-    margin: 0 auto;
-    margin-top: 100px;
-    border: 1px solid black;
-    border-radius: 4px;
+        padding: 15px;
+        background-color: Tan;
+        width:50%;
+        margin: 8px 0;
+        height:45;
+    }
+label{
+        width:100px;
+        display:inline-block;
 }
 
-.container h1 {
-    text-align: center;
-    color: teal;
-}
-
-.input-field {
-    margin: 10px 0;
-}
-
-.input-field label {
-    display: block;
-}
-
-.input-field input {
-    width: 100%;
-    padding: 6px 12px;
-    margin: 4px 0;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-.submit-btn {
-    text-align: center;
-}
-
-.submit-btn input {
-    background-color: teal;
-    color:blue;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.submit-btn input:hover {
-    background-color: #007991;
-}
 </style>
+
 </head>
 <body>
-<div class="container">
-<h1> Registration</h1>
-
-<form action="{% url 'register' %}" method="POST">
+<h1> Register Form</h1>
+<form action="{% url 'register' %}" method="POST" class="p-3 shadow">
     {% csrf_token %}
-    <div class="input-field">
-          <label>Username:</label>
-            <input type="text" placeholder="Enter Username" name="username" required>
-            <label>Password:</label>
-            <input type="password" placeholder="Enter Password" name="password" required>
-            <label>Confirm Password:</label>
-            <input type="password" placeholder="Enter Confirm Password" name="confirmpassword" required>
-        </div>
-    <br>
-            <div class="submit-btn">
+      <div class="container">
+          <label><b>Username :</b> </label>
+            <input type="text" placeholder="Enter Username" name="username" required><br>
+            <label><b>Password :</b> </label>
+            <input type="password" placeholder="Enter Password" name="password" required><br>
+            <label><b>Confirm Password : </b></label>
+            <input type="password" placeholder="Enter Confirm Password" name="confirmpassword" required><br>
+
                 <button type="submit"> <a href="#"></a> Submit </button>
-            </div>
+      </div>
 </form>
-</div>
 </body>
 </html>

@@ -4,28 +4,15 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<style>
-
-    button{
-   background-color:white;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-</style>
 <body>
-<div class="container" style="text-align:center">
-<div class="msg">
-    <div>
-        <h1>Order Confirmed</h1>
-    </div>
-<div>
-    <button>
-        <a href="{% url 'home' %}">
-         click here to return  Home Page</a>
-    </button>
+<div class="card">
+  <div class="card-body">
+      <b>Order Comfirmed</b>
+  </div>
 </div>
-</div>
-</div>
+    <p class="text-center">
+        Please click on the<a href="{% url 'home' %}">Home Page</a>
+    </p>
+
 </body>
 </html>

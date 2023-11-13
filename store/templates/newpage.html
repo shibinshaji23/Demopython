@@ -1,449 +1,154 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-
-<!--    <title>New Page</title>-->
-
-<!--<style>-->
-<!--&lt;!&ndash;body{&ndash;&gt;-->
-<!--&lt;!&ndash;  font-family: Calibri, Helvetica, sans-serif;&ndash;&gt;-->
-<!--&lt;!&ndash;  background-color: aqua;&ndash;&gt;-->
-<!--&lt;!&ndash;}&ndash;&gt;-->
-
-<!--&lt;!&ndash;input[type=text], input[type=password], textarea {&ndash;&gt;-->
-<!--&lt;!&ndash;  width: 18%;&ndash;&gt;-->
-<!--&lt;!&ndash;  padding: 10px;&ndash;&gt;-->
-<!--&lt;!&ndash;  margin: 5px 0 22px 0;&ndash;&gt;-->
-<!--&lt;!&ndash;  display: inline-block;&ndash;&gt;-->
-<!--&lt;!&ndash;  border: none;&ndash;&gt;-->
-<!--&lt;!&ndash;  background: white;&ndash;&gt;-->
-<!--&lt;!&ndash;}&ndash;&gt;-->
-<!--&lt;!&ndash;input[type=text]:focus, input[type=password]:focus {&ndash;&gt;-->
-<!--&lt;!&ndash;  background-color: orange;&ndash;&gt;-->
-<!--&lt;!&ndash;  outline: none;&ndash;&gt;-->
-<!--&lt;!&ndash;}&ndash;&gt;-->
-<!--&lt;!&ndash; div {&ndash;&gt;-->
-<!--&lt;!&ndash;            padding: 10px 0;&ndash;&gt;-->
-<!--&lt;!&ndash;         }&ndash;&gt;-->
-<!--&lt;!&ndash;hr {&ndash;&gt;-->
-<!--&lt;!&ndash;  border: 1px solid #f1f1f1;&ndash;&gt;-->
-<!--&lt;!&ndash;  margin-bottom: 25px;&ndash;&gt;-->
-<!--&lt;!&ndash;}&ndash;&gt;-->
-<!--&lt;!&ndash;button{&ndash;&gt;-->
-<!--&lt;!&ndash;  color: black;&ndash;&gt;-->
-<!--&lt;!&ndash;  padding: 16px 20px;&ndash;&gt;-->
-<!--&lt;!&ndash;  margin: 8px 0;&ndash;&gt;-->
-<!--&lt;!&ndash;  border: none;&ndash;&gt;-->
-<!--&lt;!&ndash;  cursor: pointer;&ndash;&gt;-->
-<!--&lt;!&ndash;  width: 15%;&ndash;&gt;-->
-<!--&lt;!&ndash;  opacity: 0.9;&ndash;&gt;-->
-<!--&lt;!&ndash;  transition: width .35s;&ndash;&gt;-->
-
-<!--&lt;!&ndash;&lt;!&ndash;}&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;button::hover {&ndash;&gt;-->
-<!--&lt;!&ndash;  opacity: 1;&ndash;&gt;-->
-<!--&lt;!&ndash;}&ndash;&gt;-->
-<!--&lt;!&ndash;label{&ndash;&gt;-->
-<!--&lt;!&ndash;        width:100px;&ndash;&gt;-->
-<!--&lt;!&ndash;        display:inline-block;&ndash;&gt;-->
-<!--&lt;!&ndash;}&ndash;&gt;-->
-<!--&lt;!&ndash;email{&ndash;&gt;-->
-<!--&lt;!&ndash;    width:50%;&ndash;&gt;-->
-<!--&lt;!&ndash;    }&ndash;&gt;-->
-<!--&lt;!&ndash;option {&ndash;&gt;-->
-<!--&lt;!&ndash;  margin: 0.5em;&ndash;&gt;-->
-<!--}-->
-<!--&lt;!&ndash;form{&ndash;&gt;-->
-<!--&lt;!&ndash;        margin: auto;&ndash;&gt;-->
-<!--&lt;!&ndash;        width: 50%;&ndash;&gt;-->
-<!--&lt;!&ndash;        text-align: center;&ndash;&gt;-->
-<!--&lt;!&ndash;        padding-bottom: 10px;&ndash;&gt;-->
-<!--&lt;!&ndash;        border-radius: 20px;&ndash;&gt;-->
-<!--&lt;!&ndash;        background-color: red;&ndash;&gt;-->
-<!--&lt;!&ndash;        }&ndash;&gt;-->
-<!--/* Main form styles */-->
-<!--form {-->
-<!--    background-color: #ffffff;-->
-<!--    padding: 20px;-->
-<!--    max-width: 600px;-->
-<!--    margin: 0 auto;-->
-<!--    font-family: Arial, sans-serif;-->
-<!--}-->
-<!--h1{-->
-<!--text-align:center;-->
-<!--}-->
-<!--/* Form label styles */-->
-<!--label {-->
-<!--    display: block;-->
-<!--    margin-top: 10px;-->
-<!--    margin-bottom: 5px;-->
-<!--}-->
-
-<!--/* Form input styles */-->
-<!--.input[type="text"], input[type="email"], input[type="tel"],input[type="DOB"] select {-->
-<!--    width: 100%;-->
-<!--    padding: 8px;-->
-<!--    margin-bottom: 15px;-->
-<!--    border: 1px solid #ddd;-->
-<!--    outline: none;-->
-<!--    font-size: 14px;-->
-<!--}-->
-
-<!--/* Form checkbox styles */-->
-<!--input[type="checkbox"] {-->
-<!--    margin-bottom: 15px;-->
-<!--}-->
-
-<!--/* Form submit button styles */-->
-<!--input[type="submit"] {-->
-<!--    background-color: #4CAF50;-->
-<!--    padding: 12px 20px;-->
-<!--    border: none;-->
-<!--    cursor: pointer;-->
-<!--    width: 100%;-->
-<!--    font-size: 16px;-->
-<!--}-->
-
-<!--input[type="submit"]:hover {-->
-<!--    background-color: #45a049;-->
-<!--}-->
-<!--</style>-->
-<!--</head>-->
-<!--<body>-->
-
-<!--<div class="container">-->
-<!--    <h1> Students Form </h1>-->
-
-<!-- <form action="{% url 'newpage' %}" method="POST" class="p-3 shadow">-->
-<!--    {% csrf_token %}-->
-<!--     <label for="name">Name:</label>-->
-<!--     <input type="text" id="name" name="name"><br>-->
-<!--     <label>DOB:</label>-->
-<!--     <input type="date"  placeholder="Enter your DOB" name="DOB" required><br><br>-->
-<!--     <input type="text" id="age" name="age"><br>-->
-
-
-<!--     <label for="phone">Phone Number:</label>-->
-<!--     <input type="text" id="phone" name="phone"><br>-->
-<!--     <label for="email">Mail Id:</label>-->
-<!--     <input type="email" id="email" name="email"><br>-->
-<!--     <label for="address">Address:</label>-->
-<!--     <input type="text" id="address" name="address"><br>-->
-<!--     <label for="department">Department:</label>-->
-<!--     <select id="department" name="department">-->
-<!--         <option value="">select</option>-->
-<!--         <option value="commerce">Commerce</option>-->
-<!--         <option value="science">Science</option>-->
-<!--         <option value="arts">Arts</option>-->
-<!--         <option value="LLB">LLB</option>-->
-<!--         <option value="computer science">computer science</option>-->
-<!--     </select><br>-->
-<!--     <label for="courses">Course:</label>-->
-<!--     <select id="courses" name="courses">-->
-<!--         <option value="">select</option>-->
-<!--     </select><br>-->
-<!--     <label for="purpose">Purpose:</label>-->
-<!--     <select id="purpose" name="purpose">-->
-<!--         <option value="enquiry">Enquiry</option>-->
-<!--         <option value="place_order">Place Order</option>-->
-<!--         <option value="return">Return</option>-->
-<!--     </select><br>-->
-<!--     <label for="materials">materials:</label>-->
-<!--     <ul>-->
-
-<!--         <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1" checked>-->
-<!--         <label for="styled-checkbox-1">Book</label>-->
-<!--         <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2" checked>-->
-<!--         <label for="styled-checkbox-2">Pen</label>-->
-<!--         <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3" checked>-->
-<!--         <label for="styled-checkbox-3">exam papers</label>-->
-<!--     </ul>-->
-
-
-<!--     <button type="submit" style="background-color:LightSeaGreen"> <a href="http://127.0.0.1:8000/msg/"></a><b> Submit</b> </button>-->
-<!--&lt;!&ndash;     <button type="submit" style="background-color:red"> <a href="/"></a><b> Logout</b> </button>&ndash;&gt;-->
-<!-- </form>-->
-<!--&lt;!&ndash;     <label><b>DOB:</b></label>&ndash;&gt;-->
-<!--&lt;!&ndash;     <input type="date" placeholder="Enter your DOB" name="DOB" required><br><br>&ndash;&gt;-->
-<!--&lt;!&ndash;     <label><b>Age:</b></label>&ndash;&gt;-->
-<!--&lt;!&ndash;     <input type="text" placeholder="Enter your age" name="Age" required><br>&ndash;&gt;-->
-<!--&lt;!&ndash;     <label for="gender">Gender:</label>&ndash;&gt;-->
-<!--&lt;!&ndash;     <input type="radio" id="gender" name="gender" value="male"/> Male&ndash;&gt;-->
-<!--&lt;!&ndash;     <input type="radio" id="gender" name="gender" value="female"/> Female<br>&ndash;&gt;-->
-<!--&lt;!&ndash;     <label><b>Phone Number:</b></label>&ndash;&gt;-->
-<!--&lt;!&ndash;     <input type="text" placeholder="Enter your Phone number" name="phone_number" required><br>&ndash;&gt;-->
-<!--&lt;!&ndash;     <label><b>Email:</b></label>&ndash;&gt;-->
-<!--&lt;!&ndash;     <input type="text" placeholder="Enter your email" name="email" required><br>&ndash;&gt;-->
-<!--&lt;!&ndash;     <label><b>Address :</b></label>&ndash;&gt;-->
-<!--&lt;!&ndash;     <input type="text" placeholder="Current Address" name="address" required>&ndash;&gt;-->
-<!--&lt;!&ndash;     </input><br>&ndash;&gt;-->
-<!--&lt;!&ndash;     <label for="department"><b>Department:</b></label>&ndash;&gt;-->
-<!--&lt;!&ndash;          <select id="department" name="department">&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="">select</option>&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="commerce">Commerce</option>&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="science">Science</option>&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="arts">Arts</option>&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="LLB">LLB</option>&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="computerscience">computerscience</option>&ndash;&gt;-->
-<!--&lt;!&ndash;          </select><br><br>&ndash;&gt;-->
-
-<!--&lt;!&ndash;         <label for="courses"><b>Courses:</b></label>&ndash;&gt;-->
-<!--&lt;!&ndash;         <select id="courses" name="courses">&ndash;&gt;-->
-<!--&lt;!&ndash;             <option value="">select</option>&ndash;&gt;-->
-<!--&lt;!&ndash;         </select><br><br>&ndash;&gt;-->
-
-<!--&lt;!&ndash;          <label for="purpose"><b>Purpose:</b></label>&ndash;&gt;-->
-<!--&lt;!&ndash;          <select id="purpose" name="purpose">&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="enquiry">Enquiry</option>&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="place_order">Place Order</option>&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="return">Return</option>&ndash;&gt;-->
-<!--&lt;!&ndash;          </select>&ndash;&gt;-->
-<!--&lt;!&ndash;         <br><br>&ndash;&gt;-->
-<!--&lt;!&ndash;     <label><b>Materialsprovide:</b></label>&ndash;&gt;-->
-<!--&lt;!&ndash;     <ul style="unstyled">&ndash;&gt;-->
-<!--&lt;!&ndash;         <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1" checked>&ndash;&gt;-->
-<!--&lt;!&ndash;         <label for="styled-checkbox-1">Book</label>&ndash;&gt;-->
-<!--&lt;!&ndash;         <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2" checked>&ndash;&gt;-->
-<!--&lt;!&ndash;         <label for="styled-checkbox-2">Pen</label>&ndash;&gt;-->
-<!--&lt;!&ndash;         <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3" checked>&ndash;&gt;-->
-<!--&lt;!&ndash;         <label for="styled-checkbox-3">Exam Papers</label>&ndash;&gt;-->
-<!--&lt;!&ndash;     </ul>&ndash;&gt;-->
-
-<!--&lt;!&ndash;     <br>&ndash;&gt;-->
-<!--&lt;!&ndash;         <button type="submit" style="background-color:LightSeaGreen"> <a href="http://127.0.0.1:8000/msg/"></a><b> Submit</b> </button>&ndash;&gt;-->
-
-
-
-
-<!--</div>-->
-<!--<script>-->
-<!--    function showForm() {-->
-<!--        var form = document.getElementById("myForm");-->
-<!--        form.style.display = "block";-->
-<!--    }-->
-
-<!--    // JavaScript to populate the dependent dropdown (Courses)-->
-<!--    var departmentSelect = document.getElementById("department");-->
-<!--    var coursesSelect = document.getElementById("courses");-->
-
-<!--    departmentSelect.addEventListener("change", function () {-->
-<!--        var selectedDepartment = departmentSelect.value;-->
-<!--        coursesSelect.innerHTML = ""; // Clear the courses dropdown-->
-
-<!--        if (selectedDepartment === "commerce") {-->
-<!--            var commerceCourses = ["BBA", "BCom"];-->
-<!--            for (var i = 0; i < commerceCourses.length; i++) {-->
-<!--                var option = document.createElement("option");-->
-<!--                option.text = commerceCourses[i];-->
-<!--                coursesSelect.add(option);-->
-<!--            }-->
-<!--        } else if (selectedDepartment === "science") {-->
-<!--            var scienceCourses = ["Biology", "Physics", "Chemistry"];-->
-<!--            for (var i = 0; i < scienceCourses.length; i++) {-->
-<!--                var option = document.createElement("option");-->
-<!--                option.text = scienceCourses[i];-->
-<!--                coursesSelect.add(option);-->
-<!--            }-->
-<!--        } else if (selectedDepartment === "arts") {-->
-<!--            var artsCourses = ["History", "Literature", "Psychology"];-->
-<!--            for (var i = 0; i < artsCourses.length; i++) {-->
-<!--                var option = document.createElement("option");-->
-<!--                option.text = artsCourses[i];-->
-<!--                coursesSelect.add(option);-->
-<!--            }-->
-<!--        } else if (selectedDepartment === "LLB") {-->
-<!--            var LLBCourses = ["Bsc", "BA", "BBA"]; // Corrected variable name-->
-<!--            for (var i = 0; i < LLBCourses.length; i++) {-->
-<!--                var option = document.createElement("option");-->
-<!--                option.text = LLBCourses[i];-->
-<!--                coursesSelect.add(option);-->
-<!--            }-->
-<!--        } else if (selectedDepartment === "computerscience") {-->
-<!--            var computerscienceCourses = ["java", "python", "AI"]; // Corrected variable name-->
-<!--            for (var i = 0; i < computerscienceCourses.length; i++) {-->
-<!--                var option = document.createElement("option");-->
-<!--                option.text = computerscienceCourses[i];-->
-<!--                coursesSelect.add(option);-->
-<!--            }-->
-<!--        }-->
-<!--    });-->
-<!--</script>-->
-
-<!--         <button type="submit"> <a href="/"></a> Logout </button>-->
-<!--</div>-->
-<!--</body>-->
-<!--</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Students Form</title>
+    <title>New Page</title>
 
-    <style>
-    body{
-    background-color:aqua;
+<style>
+body{
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: aqua;
+}
+
+input[type=text], input[type=password], textarea {
+  width: 18%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: orange;
+  outline: none;
+}
+ div {
+            padding: 10px 0;
+         }
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+button{
+  color: black;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  opacity: 0.9;
+  transition: width .35s;
+
+<!--}-->
+button::hover {
+  opacity: 1;
+}
+label{
+        width:100px;
+        display:inline-block;
+}
+email{
+    width:50%;
     }
-        /* Main form styles */
-        form {
+option {
+  margin: 0.5em;
+}
 
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-            font-family: Arial, sans-serif;
-        }
 
-        h1 {
-            text-align: center;
-        }
-
-     /***   /* Form label styles */
-        label {
-            display: block;
-            margin-top: 10px;
-            margin-bottom: 5px;
-        }
-
-        /* Form input styles */
-        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            outline: none;
-            font-size: 14px;
-        }
-
-        /* Form checkbox styles*/
-        input[type="checkbox"] {
-            margin-bottom: 15px;
-        }
-
-        /* Form submit button styles */
-        .submit-btn{
-        text-align:center;
-        }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            padding: 12px 20px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            font-size: 16px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
+</style>
 </head>
 <body>
+<h1> New Page </h1>
+ <form action="{% url 'newpage' %}" method="POST" class="p-3 shadow">
+    {% csrf_token %}
+<!--     <div class="container">-->
+
+            <label><b>Name:</b></label>
+            <input type="text" placeholder="Enter your name" name="name" required><br>
+
+            <label><b>DOB:</b></label>
+            <input type="date" placeholder="Enter your DOB" name="DOB" required><br><br>
+
+            <label><b>Age:</b></label>
+            <input type="text" placeholder="Enter your age" name="Age" required><br>
+
+            <label><b>Gender:</b></label>
+            <input type="radio" id="gender" name="gender" value="male"/> Male
+            <input type="radio" id="gender" name="gender" value="female"/> Female <br><br>
+
+            <label><b>Phone Number:</b></label>
+            <input type="text" placeholder="Enter your Phone number" name="phone_number" required><br>
+
+            <label><b>Email:</b></label>
+            <input type="text" placeholder="Enter your email" name="email" required><br><br>
+
+            <label><b>Address :<br /><br /><br /><br /><br /></b></label>
+            <textarea cols="40" rows="3" placeholder="Current Address" name="address" required>
+            </textarea><br>
+
+            <label><b>Department:</b></label>
+
+                <select class="form-control" name="select1" id="select1">
+                    <option value="0" selected disabled>Select...</option>
+                <option value="1">Biology</option>
+                <option value="2">Computer Science</option>
+                <option value="3">Commerce</option>
+                <option value="4">Humanities</option>
+                  <option value="4">Economic</option>
+              </select>
+
+                <label><b>Course:</b></label>
+
+              <select class="form-control" name="select2" id="select2">
+                  <option value="0" selected disabled>---Select---</option>
+                <option value="1">Biology Science</option>
+                <option value="2">Home Science</option>
+                <option value="3">Accountancy</option>
+                <option value="4">Business studies</option>
+                  <option value="4">Statistics</option>
+                <option value="4">Electronics</option>
+                <option value="4">Computer Science</option>
+                  <option value="4"> Science</option>
+              </select>
+
+            <br><br>
 
 
+         <label><b>Purpose:</b></label>
+              <select class="form-control" name="select" id="select">
+                  <option value="0" selected disabled>Select</option>
+                  <option value="1">Enquiry</option>
+                <option value="2">Place Order</option>
+                <option value="3">Return</option>
+              </select>
+         <br><br>
+
+         <label><b>Materialsprovide:</b></label>
+
+            <ul class="unstyled centered">
+              <li>
+                <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1" checked>
+                <label for="styled-checkbox-1">Book</label>
 
 
-    <form action="{% url 'newpage' %}" method="post">
-        {% csrf_token %}
-         <h1>Students Form</h1>
+                <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2" checked>
+                <label for="styled-checkbox-2">Pen</label>
 
-        <div class="input-field">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br>
 
-        <label for="DOB">DOB:</label>
-        <input type="date" id="DOB" name="DOB" required><br><br>
-
-        <label for="age">Age:</label>
-        <input type="text" id="age" name="age"><br>
-        <label>Gender:</label>
-<!--            <input type="radio">-->
-<!--            <label>male</label>-->
-<!--            <input type="radio">-->
-<!--            <label>female</label>-->
-            <input type="radio" id="gender" name="male">male
-            <input type="radio" id="gender" name="female">female
-        <label for="phone">Phone Number:</label>
-        <input type="text" id="phone" name="phone"><br>
-
-        <label for="email">Mail Id:</label>
-        <input type="email" id="email" name="email"><br>
-
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address"><br>
-
-        <label for="department">Department:</label>
-        <select id="department" name="department">
-            <option value="">select</option>
-            <option value="commerce">Commerce</option>
-            <option value="science">Science</option>
-            <option value="arts">Arts</option>
-            <option value="LLB">LLB</option>
-            <option value="computer science">Computer Science</option>
-        </select><br>
-
-        <label for="courses">Course:</label>
-        <select id="courses" name="courses">
-            <option value="">select</option>
-        </select><br>
-
-        <label for="purpose">Purpose:</label>
-        <select id="purpose" name="purpose">
-            <option value="enquiry">Enquiry</option>
-            <option value="place_order">Place Order</option>
-            <option value="return">Return</option>
-        </select><br>
-
-        <label for="materials">Materials:</label>
-            <ul>
-         <input type="checkbox" id="notebook" name="notebook" value="notebook">
-         <label for="Notebook">Notebook</label>
-         <input type="checkbox" id="pen" name="pen" value="pen">
-         <label for="Pen">Pen</label>
-         <input type="checkbox" id="exam_papers" name="exam_papers" value="exam_papers">
-         <label for="exam_papers">Exam Papers</label><br><br>
+                <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3" checked>
+                <label for="styled-checkbox-3">Papper</label>
+              </li>
             </ul>
-      </div>
-        <div class="submit-btn">
-            <button type="submit" style="background-color: LightSeaGreen">Submit</button>
-        </div>
-    </form>
-</div>
+<!--                     <button type="submit"> <a href="http://127.0.0.1:8000/msg/"></a> Submit </button>-->
 
-<script>
-    // JavaScript to populate the dependent dropdown (Courses)
-    var departmentSelect = document.getElementById("department");
-    var coursesSelect = document.getElementById("courses");
 
-    departmentSelect.addEventListener("change", function () {
-        var selectedDepartment = departmentSelect.value;
-        coursesSelect.innerHTML = ""; // Clear the courses dropdown
+         <button type="submit" style="background-color:LightSeaGreen"> <a href="http://127.0.0.1:8000/msg/"></a><b> Submit</b> </button>
+<!--         <button type="submit" style="background-color:red"> <a href="/"></a><b> Logout</b> </button>-->
+<!--    </div>-->
 
-        if (selectedDepartment === "commerce") {
-            var commerceCourses = ["BBA", "BCom"];
-            populateDropdown(commerceCourses);
-        } else if (selectedDepartment === "science") {
-            var scienceCourses = ["Biology", "Physics", "Chemistry"];
-            populateDropdown(scienceCourses);
-        } else if (selectedDepartment === "arts") {
-            var artsCourses = ["History", "Literature", "Psychology"];
-            populateDropdown(artsCourses);
-        } else if (selectedDepartment === "LLB") {
-            var LLBCourses = ["Bsc", "BA", "BBA"];
-            populateDropdown(LLBCourses);
-        } else if (selectedDepartment === "computer science") {
-            var computerScienceCourses = ["Java", "Python", "AI"];
-            populateDropdown(computerScienceCourses);
-        }
-    });
-
-    function populateDropdown(courses) {
-        for (var i = 0; i < courses.length; i++) {
-            var option = document.createElement("option");
-            option.text = courses[i];
-            coursesSelect.add(option);
-        }
-    }
-</script>
+ </form>
+<a href="/"><button style="background-color:red">Logout</button></a>
+<!--         <button type="submit"> <a href="/"></a> Logout </button>-->
 
 </body>
 </html>

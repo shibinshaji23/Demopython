@@ -44,11 +44,10 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('newpage')
-
+            return redirect('login')
         else:
             messages.info(request, "invaild username or password")
-            return redirect('login')
+            return redirect('newpage')
     else:
         return render(request, "login.html")
 
